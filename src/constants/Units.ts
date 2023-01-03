@@ -1,6 +1,6 @@
 enum Units {
   CELCIUS = "metric",
-  FARENHEIT= "imperial",
+  FARENHEIT = "imperial",
   KELVIN = "standard"
 }
 
