@@ -5,7 +5,11 @@ import Navbar from './components/Navbar';
 import { store } from './store';
 
 const Settings = lazy(() => import("./views/Settings"));
+const GeneralConfig = lazy(() => import('./views/Settings/GeneralConfig'));
+const DashboardConfig = lazy(() => import('./views/Settings/DashboardConfig'));
+const GroupConfig = lazy(() => import('./views/Settings/GroupConfig'));
 const BackgroundConfig = lazy(() => import('./views/Settings/BackgroundConfig'));
+const WeatherConfig = lazy(() => import('./views/Settings/WeatherConfig'));
 const About = lazy(() => import("./views/About"));
 
 const App: Component = () => {
@@ -15,7 +19,7 @@ const App: Component = () => {
     return randBackground
   }
 
-  const [ activeBackground, setActiveBackground ] = createSignal<string>(getRandBackground());
+  const [ activeBackground, setActiveBackground ] = createSignal(getRandBackground());
 
   const interval = setInterval(() => {
     setActiveBackground(getRandBackground())
@@ -35,8 +39,13 @@ const App: Component = () => {
         <Routes>
           <Route path="/" component={Home} />
           <Route path="/settings" component={Settings}>
-            <Route path="/" />
+            <Route path="/" component={GeneralConfig} />
+            <Route path="/dashboard">
+              <Route path="/" component={DashboardConfig} />
+              <Route path="/:id" component={GroupConfig} />
+            </Route>
             <Route path="/backgrounds" component={BackgroundConfig} />
+            <Route path="/weather" component={WeatherConfig} />
           </Route>
           <Route path="/about" component={About} />
         </Routes>

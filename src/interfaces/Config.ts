@@ -1,11 +1,10 @@
-import SearchEngines from "../constants/SearchEngines";
 import BackgorundsConfig from "./BackgroundsConfig";
 import { Group } from "./Link";
 import WeatherConfig from "./WeatherConfig";
 
 export default interface Config {
   groups: Group[],
-  searchEngine: SearchEngines,
+  searchEngine: string,
   weather: WeatherConfig,
   backgrounds: BackgorundsConfig,
 }

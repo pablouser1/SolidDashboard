@@ -9,10 +9,10 @@ const Search: Component = () => {
   const pickEngine = (): string => {
     let url: string = "";
     switch (store.searchEngine) {
-      case SearchEngines.GOOGLE:
+      case SearchEngines.Google:
         url = "https://google.com/search?q="
         break
-      case SearchEngines.DUCKDUCKGO:
+      case SearchEngines.DuckDuckGo:
         url = "https://duckduckgo.com/search?q="
         break
     }
@@ -34,7 +34,7 @@ const Search: Component = () => {
   return (
     <div class="field has-addons">
       <div class="control has-icons-left is-expanded">
-        <input type="text" class="input" onChange={(e) => setTerm((e.target as HTMLInputElement).value)} onKeyUp={isValidKey} />
+        <input type="text" class="input" onChange={e => setTerm((e.target as HTMLInputElement).value)} onKeyUp={isValidKey} />
         <span class="icon is-small is-left">
           <FaSolidMagnifyingGlass />
         </span>

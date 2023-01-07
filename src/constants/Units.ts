@@ -1,7 +1,7 @@
-enum Units {
-  CELCIUS = "metric",
-  FARENHEIT = "imperial",
-  KELVIN = "standard"
+const Units = {
+  Celcius: "metric",
+  Farenheit: "imperial",
+  Kelvin: "standard"
 }
 
 export default Units

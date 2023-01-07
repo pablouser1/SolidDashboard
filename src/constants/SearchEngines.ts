@@ -1,6 +1,6 @@
-enum SearchEngines {
-  GOOGLE = "google",
-  DUCKDUCKGO = "duckduckgo"
+const SearchEngines = {
+  Google: "google",
+  DuckDuckGo: "duckduckgo"
 }
 
 export default SearchEngines

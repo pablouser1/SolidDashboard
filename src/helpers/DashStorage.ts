@@ -4,7 +4,7 @@ import Units from "../constants/Units";
 import Config from "../interfaces/Config";
 
 export default class DashStorage {
-  static KEY = "solidash"
+  private static KEY = "solidash"
 
   static exists(): boolean {
     return localStorage.getItem(DashStorage.KEY) !== null ? true : false
@@ -13,11 +13,11 @@ export default class DashStorage {
   static populate(): void {
     const default_data = {
       groups: [],
-      searchEngine: SearchEngines.GOOGLE,
+      searchEngine: SearchEngines.Google,
       weather: {
         lon: 0,
         lat: 0,
-        units: Units.CELCIUS
+        units: Units.Celcius
       },
       backgrounds: {
         interval: Time.HALFHOUR,
